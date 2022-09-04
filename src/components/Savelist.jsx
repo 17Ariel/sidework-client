@@ -1,7 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Flex, Icon, Text, useToast } from "@chakra-ui/react";
-import { Place, Badge, Bookmark } from "@mui/icons-material";
+// import { Place, Badge, Bookmark } from "@mui/icons-material";
+import { GeoAlt, PersonWorkspace, Bookmark } from "react-bootstrap-icons";
+
 import { unsaved } from "../service/saved";
 
 const Savelist = ({ saved, user, setloading, setdata }) => {
@@ -37,11 +39,11 @@ const Savelist = ({ saved, user, setloading, setdata }) => {
           />
         </Flex>
         <Text fontSize="large">
-          <Icon as={Badge} mr={2} pos="relative" top={1} />
+          <Icon as={PersonWorkspace} mr={2} pos="relative" top={1} />
           {save.listing.skills}
         </Text>
         <Text fontSize="large">
-          <Icon as={Place} mr={2} mt={1} pos="relative" top={1} />
+          <Icon as={GeoAlt} mr={2} mt={1} pos="relative" top={1} />
           {save.listing.location}
         </Text>
       </Flex>

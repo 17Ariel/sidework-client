@@ -3,7 +3,9 @@ import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Loading from "../components/Loading";
 import useFetch from "../hooks/useFetch";
-import { Place, Badge, Description as Desc } from "@mui/icons-material";
+import { InfoIcon } from "@chakra-ui/icons";
+import { GeoAlt, PersonWorkspace } from "react-bootstrap-icons";
+// import { Place, Badge, Description as Desc } from "@mui/icons-material";
 import { saved } from "../service/saved";
 const api = import.meta.env.VITE_API_KEY;
 
@@ -54,16 +56,17 @@ const Job = () => {
           Posted By: {users.email}
         </Text>
         <Text fontSize="lg" fontWeight="semibold">
-          <Icon as={Badge} pos="relative" top={1} mr={2} />
+          <Icon as={PersonWorkspace} pos="relative" top={1} mr={2} />
           {skills}
         </Text>
         <Text fontSize="lg">
-          <Icon as={Place} pos="relative" top={1} mr={2} />
+          <Icon as={GeoAlt} pos="relative" top={1} mr={2} />
           {location}
         </Text>
 
         <Text fontSize="lg">
-          <Icon as={Desc} pos="relative" top={1} mr={2} />
+          <InfoIcon pos="relative" top={1} mr={2} />
+          {/* <Icon as={Desc} pos="relative" top={1} mr={2} /> */}
           {description}
         </Text>
         <Flex justifyContent="center" gap={6} mt="6">

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Menu as MenuIcons } from "@mui/icons-material";
+// import { Menu as MenuIcons } from "@mui/icons-material";
+import { HamburgerIcon } from "@chakra-ui/icons";
 import { Flex, Icon } from "@chakra-ui/react";
 import Logo from "./Logo";
 import Links from "./Links";
@@ -33,14 +34,21 @@ const Navbar = () => {
               <Links to="/" name="Signin" />
               <Links to="/signup" name="Signup" />
             </Flex>
-            <Icon
+            <HamburgerIcon
+              onClick={handleToggle}
+              cursor="pointer"
+              color="blue.600"
+              fontSize="3xl"
+              display={{ base: "block", sm: "block", md: "none" }}
+            />
+            {/* <Icon
               onClick={handleToggle}
               cursor="pointer"
               as={MenuIcons}
               color="blue.600"
               fontSize="3xl"
               display={{ base: "block", sm: "block", md: "none" }}
-            />
+            /> */}
           </>
         ) : (
           <>
@@ -55,14 +63,21 @@ const Navbar = () => {
               <Links to="/saved" name="Saved" />
               <Profile user={user} navigate={navigate} />
             </Flex>
-            <Icon
+            <HamburgerIcon
+              onClick={handleToggle}
+              cursor="pointer"
+              color="blue.600"
+              fontSize="3xl"
+              display={{ base: "block", sm: "block", md: "none" }}
+            />
+            {/* <Icon
               onClick={handleToggle}
               as={MenuIcons}
               cursor="pointer"
               color="blue.600"
               fontSize="3xl"
               display={{ base: "block", sm: "block", md: "none" }}
-            />
+            /> */}
           </>
         )}
       </Flex>

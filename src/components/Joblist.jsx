@@ -1,6 +1,7 @@
 import React from "react";
 import { Flex, Icon, Text, Link as Links } from "@chakra-ui/react";
-import { Place, Badge } from "@mui/icons-material";
+import { GeoAlt, PersonWorkspace } from "react-bootstrap-icons";
+// import { Place, Badge } from "@mui/icons-material";
 import { Link, matchPath, useLocation } from "react-router-dom";
 const Joblist = ({ jobs }) => {
   const { pathname } = useLocation();
@@ -36,11 +37,11 @@ const Joblist = ({ jobs }) => {
         )}
 
         <Text fontSize="large" fontWeight="semibold">
-          <Icon as={Badge} mr={2} pos="relative" top={1} />
+          <Icon as={PersonWorkspace} mr={2} pos="relative" top={1} />
           {job.skills}
         </Text>
         <Text fontSize="large">
-          <Icon as={Place} mr={2} mt={1} pos="relative" top={1} />
+          <Icon as={GeoAlt} mr={2} mt={1} pos="relative" top={1} />
           {job.location}
         </Text>
         {ispublic ? <Text>Posted by: {job.user?.email}</Text> : <></>}

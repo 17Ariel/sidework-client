@@ -8,7 +8,9 @@ import {
   PopoverBody,
   Icon,
 } from "@chakra-ui/react";
-import { ArrowDropDown, Logout } from "@mui/icons-material";
+// import { ArrowDropDown, Logout } from "@mui/icons-material";
+import { ChevronDownIcon } from "@chakra-ui/icons";
+import { BoxArrowRight } from "react-bootstrap-icons";
 import { useContext, useRef } from "react";
 import { Globalcontext } from "../context/Globalcontext";
 import useFetch from "../hooks/useFetch";
@@ -42,7 +44,7 @@ const Profile = ({ user, navigate }) => {
               borderRadius="full">
               <Text fontWeight="normal">{convertEmail(email)}</Text>
             </Box>
-            <Icon as={ArrowDropDown} />
+            <ChevronDownIcon />
           </Box>
         </PopoverTrigger>
         <PopoverContent>
@@ -60,7 +62,7 @@ const Profile = ({ user, navigate }) => {
               fontWeight="normal"
               padding="10px 8px"
               onClick={() => logout(navigate, handleToggle)}>
-              <Icon as={Logout} />
+              <Icon as={BoxArrowRight} mr={2} />
               Logout
             </Button>
           </PopoverBody>
